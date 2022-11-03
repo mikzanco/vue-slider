@@ -25,29 +25,29 @@
     
                                 <!-- immagini -->
                                 <div class="my-carousel-item active" >
-                                    <img class="img-fluid" :src="stati.images[activeImage]" alt="...  picture">
+                                    <img class="img-fluid" :src="stati.images[activeImage]" alt="">
                                     <div class="item-description px-3">
-                                        <h2>Svezia</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</p>
+                                        <h2>{{ stati.title[activeImage] }}</h2>
+                                        <p>{{stati.description[activeImage]}}</p>
                                     </div>
                                 </div>
                                 <!-- /immagini -->
                             </div>
                             <div class="my-thumbnails position-relative">
                                 <!-- prev -->
-                                <div class="my-previous position-absolute">
+                                <div class="my-previous position-absolute" @click="prev">
                                     <span class="my-prev-hook"></span>
                                 </div>
     
                                 <!-- next -->
-                                <div class="my-next position-absolute">
+                                <div class="my-next position-absolute" @click="next">
                                     <span class="my-next-hook"></span>
                                 </div>
     
                                 <!-- immagini interne -->
                                 <div class="inner">
                                     
-                                    <div class="my-thumbnail active">
+                                    <div class="my-thumbnail ">
                                         <img class="img-fluid"
                                             v-for="(image, indice) in stati.images" 
                                             :src="image"

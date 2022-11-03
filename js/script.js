@@ -24,8 +24,15 @@ createApp({
     },
     methods:{
         cahangeImage(index){
-            this.acriveImage = index;
+            this.activeImage = index;
+        },
+        next() {
+            this.activeImage++;
+        },
+        prev() {
+            this.activeImage--;
         }
+
     }
 }).mount('#app')
 
