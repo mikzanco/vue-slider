@@ -26,12 +26,16 @@ createApp({
         cahangeImage(index){
             this.activeImage = index;
         },
-        next() {
-            this.activeImage++;
-        },
-        prev() {
-            this.activeImage--;
+        nextPrev(isNext){
+            if(isNext) this.activeImage++;
+            else this.activeImage--;
+            if(this.activeImage === this.stati.images.length){
+                this.activeImage = 0;
+            }else if(this.activeImage < 0){
+                this.activeImage = this.stati.images.length -1
+            }
         }
+        
 
     }
 }).mount('#app')

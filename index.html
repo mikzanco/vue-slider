@@ -35,12 +35,12 @@
                             </div>
                             <div class="my-thumbnails position-relative">
                                 <!-- prev -->
-                                <div class="my-previous position-absolute" @click="prev">
+                                <div class="my-previous position-absolute" @click="nextPrev(false)">
                                     <span class="my-prev-hook"></span>
                                 </div>
     
                                 <!-- next -->
-                                <div class="my-next position-absolute" @click="next">
+                                <div class="my-next position-absolute" @click="nextPrev(true)">
                                     <span class="my-next-hook"></span>
                                 </div>
     
