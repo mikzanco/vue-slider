@@ -23,7 +23,7 @@ createApp({
         }
     },
     methods:{
-        cahangeImage(index){
+        changeImage(index){
             this.activeImage = index;
         },
         nextPrev(isNext){
@@ -34,7 +34,7 @@ createApp({
             }else if(this.activeImage < 0){
                 this.activeImage = this.stati.images.length -1
             }
-        }
+        },
         
 
     }
