@@ -19,7 +19,8 @@ createApp({
                 ]
 
             },
-            activeImage: 0
+            activeImage: 0,
+            
         }
     },
     methods:{
@@ -35,9 +36,27 @@ createApp({
                 this.activeImage = this.stati.images.length -1
             }
         },
+        startAutoscroll(){
+            this.autoscroll = setInterval(()=>{
+
+                // se isOverSlider è true vuol dire che il mouse è sopra lo slider o che ho premuto la barra spaziatrice quindi non verranno chiamate le funzioni dell'autoscroll
+                this.nextPrev(true);
+            },2000)
+        },
+        stopAutoscroll(){
+            clearInterval(this.autoscroll);
+        }
+        
         
 
+    },
+    mounted(){
+        this.startAutoscroll;
+    },
+    created(){
+
     }
+    
 }).mount('#app')
 
 // const images = [
@@ -193,14 +212,3 @@ createApp({
 //     activateImage();
 // }
 
-// setInterval(()=>{
-
-//     // se isOverSlider è true vuol dire che il mouse è sopra lo slider o che ho premuto la barra spaziatrice quindi non verranno chiamate le funzioni dell'autoscroll
-//     if(!isOverSlider){
-//         deactivateImage();
-//         // isNextDirection è true o false in base al doppio click dell'immagine
-//         nextPrev(isNextDirection);
-//         activateImage();
-//     }
-
-// },2000);
